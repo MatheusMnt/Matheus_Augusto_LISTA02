@@ -69,6 +69,7 @@ public class TesteSistemaMain {
 
         System.out.println();
 
+        //listando pessoas maiores de idade
         System.out.println("Pessoas Maiores de Idade:");
        for (Pessoa n: pessoas.listarPessoasMaioresIdade()){
            System.out.println(n.toString());
@@ -76,13 +77,15 @@ public class TesteSistemaMain {
 
        System.out.println();
 
+       //listando clientes maiores de idade
        System.out.println("Clientes Maiores de Idade:");
        for (Pessoa n: pessoas.listarClientesMaioresIdade()){
            System.out.println(n.toString());
        }
 
        System.out.println();
-    
+       
+       //listando funcionários com salario maior que 
        System.out.println("Funcionários com salário maior que R$ 1000.00:");
        for (Pessoa n: pessoas.listarFuncionariosComSalarioMAiorQue(1000.00)){
            System.out.println(n.toString());
@@ -90,6 +93,7 @@ public class TesteSistemaMain {
 
        System.out.println();
 
+       //listando gerentes da mesma area
        System.out.println("Gerentes da área de Ciência da Computação:");
        for (Pessoa n: pessoas.listarGerenteDaArea("Ciência da Computação")){
            System.out.println(n.toString());

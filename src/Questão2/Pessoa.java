@@ -40,7 +40,7 @@ public abstract class Pessoa {
     public String toString() {
         String pessoa;
             pessoa = this.nome +",";
-            DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MMM/yyyy");
             pessoa += formatador.format(dataNascimento);
 
         return pessoa;

@@ -30,7 +30,8 @@ public class Gerente extends Funcionario {
             gerente = this.getNome() +", ";
             DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MMM/yyyy");
             gerente += formatador.format(super.getDataNascimento()) + ", ";
-            gerente += this.getSalario() + ", ";
+            gerente += "Salário: " + this.getSalario() + ", ";
+            gerente += "Imposto: " + this.calcularImpostoDevido() + ", ";
             gerente += this.area;
         return gerente;
     }

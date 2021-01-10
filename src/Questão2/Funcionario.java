@@ -41,7 +41,8 @@ public class Funcionario extends Pessoa {
             funcionario = this.getNome() +", ";
             DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MMM/yyyy");
             funcionario += formatador.format(super.getDataNascimento()) + ", ";
-            funcionario += this.salario;
+            funcionario += "Salário: " + this.salario + ", ";
+            funcionario += "Imposto: " + this.calcularImpostoDevido();
         return funcionario;
     }
 

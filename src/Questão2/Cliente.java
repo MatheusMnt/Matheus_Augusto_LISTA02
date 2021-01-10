@@ -34,7 +34,6 @@ public class Cliente extends Pessoa{
     }
 
     @Override
-    //esse if tem algum problema com os metodos getDataNAscimento()
     public boolean equals(Object obj) {
         boolean clienteIgual = false;
         if (obj instanceof Cliente){
