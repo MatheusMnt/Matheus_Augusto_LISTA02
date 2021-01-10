@@ -26,7 +26,7 @@ public class RepositorioPessoas {
         if (!mesmaPessoa){
                 pessoas.add(pessoaParaCadastrar);
             } else{
-                System.out.println("pessoa já cadastrada");
+                System.out.println(pessoaParaCadastrar.getNome() + " já cadastrado(a)");
             }   
     }
 
@@ -46,10 +46,12 @@ public class RepositorioPessoas {
         ArrayList <Cliente> clienteMaiorIdade = new ArrayList<>();
         LocalDate hoje = LocalDate.now();
         for (Pessoa n: this.pessoas){
+            if ( n instanceof Cliente){
             int idade = (int) n.getDataNascimento().until(hoje, ChronoUnit.YEARS);
             if (idade >= 18){
                 clienteMaiorIdade.add((Cliente) n);
             }
+        }
         }
         return clienteMaiorIdade;
     }
@@ -57,8 +59,10 @@ public class RepositorioPessoas {
     public ArrayList <Funcionario> listarFuncionariosComSalarioMAiorQue(double salarioLimite){
         ArrayList <Funcionario> funcionarioComSalarioMaior = new ArrayList<>();
         for (Pessoa n: this.pessoas){
+            if (n instanceof Funcionario){
             if ( ((Funcionario) n).getSalario() > salarioLimite){
                 funcionarioComSalarioMaior.add((Funcionario) n);
+            }
             }
         }
         return funcionarioComSalarioMaior;
@@ -67,8 +71,10 @@ public class RepositorioPessoas {
     public ArrayList <Gerente> listarGerenteDaArea(String areaProcurada){
         ArrayList <Gerente> gerentesDaMesmaArea = new ArrayList<>();
         for (Pessoa n: this.pessoas){
+            if ( n instanceof Gerente){
             if ( ((Gerente) n).getArea() == areaProcurada){
                 gerentesDaMesmaArea.add((Gerente) n);
+            }
             }
         }
         return gerentesDaMesmaArea;

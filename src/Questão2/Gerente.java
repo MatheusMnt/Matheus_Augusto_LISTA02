@@ -27,10 +27,10 @@ public class Gerente extends Funcionario {
     @Override
     public String toString() {
         String gerente;
-            gerente = this.getNome() +",";
-            DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-            gerente += formatador.format(super.getDataNascimento()) + ",";
-            gerente += this.getSalario() + ",";
+            gerente = this.getNome() +", ";
+            DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MMM/yyyy");
+            gerente += formatador.format(super.getDataNascimento()) + ", ";
+            gerente += this.getSalario() + ", ";
             gerente += this.area;
         return gerente;
     }

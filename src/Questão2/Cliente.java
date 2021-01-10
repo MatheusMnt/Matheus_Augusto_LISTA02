@@ -26,9 +26,9 @@ public class Cliente extends Pessoa{
     @Override
     public String toString() {
         String cliente;
-            cliente = this.getNome() +",";
+            cliente = this.getNome() +", ";
             DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MMM/yyyy");
-            cliente += formatador.format(super.getDataNascimento()) + ",";
+            cliente += formatador.format(super.getDataNascimento()) + ", ";
             cliente += this.codigo;
         return cliente;
     }

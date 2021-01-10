@@ -38,9 +38,9 @@ public class Funcionario extends Pessoa {
     @Override
     public String toString() {
         String funcionario;
-            funcionario = this.getNome() +",";
-            DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-            funcionario += formatador.format(super.getDataNascimento()) + ",";
+            funcionario = this.getNome() +", ";
+            DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MMM/yyyy");
+            funcionario += formatador.format(super.getDataNascimento()) + ", ";
             funcionario += this.salario;
         return funcionario;
     }
