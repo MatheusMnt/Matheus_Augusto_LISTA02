@@ -36,6 +36,7 @@ public abstract class Despesa implements Transacao {
         return "DESPESA";
     }
 
+    //transforma em uma string formatada
     @Override
     public String toString() {
         return getTipo() + ": R$ " + calcularTotal() + ", " + getDescricao();

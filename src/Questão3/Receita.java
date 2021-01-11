@@ -38,6 +38,7 @@ public abstract class Receita implements Transacao {
         return "RECEITA";
     }
 
+    //transforma em uma String formatada
     @Override
     public String toString() {
         return getTipo() + ": R$ " + calcularTotal() + ", " + getDescricao();
