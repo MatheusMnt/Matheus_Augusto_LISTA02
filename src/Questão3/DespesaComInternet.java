@@ -39,4 +39,18 @@ public class DespesaComInternet extends Despesa {
      return total;
     }
     
+    @Override
+    public boolean equals(Object obj) {
+        boolean despesasIguais = false;
+        if ( obj instanceof DespesaComInternet){
+            DespesaComInternet despesaParaComaprar = (DespesaComInternet) obj;
+          if (despesaParaComaprar.calcularTotal() == this.calcularTotal()
+                && despesaParaComaprar.getData().equals(this.getData())
+                    && despesaParaComaprar.getDescricao() == this.getDescricao()){
+                        despesasIguais = true;
+                    }
+        }
+
+        return despesasIguais;
+    }
 }

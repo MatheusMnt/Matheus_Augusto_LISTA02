@@ -35,5 +35,11 @@ public abstract class Despesa implements Transacao {
     public String getTipo() {
         return "DESPESA";
     }
+
+    @Override
+    public String toString() {
+        return getTipo() + ": R$ " + calcularTotal() + ", " + getDescricao();
+    }
+
     
 }

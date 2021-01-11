@@ -35,7 +35,12 @@ public abstract class Receita implements Transacao {
 
     @Override
     public String getTipo() {
-        return "Receita";
+        return "RECEITA";
+    }
+
+    @Override
+    public String toString() {
+        return getTipo() + ": R$ " + calcularTotal() + ", " + getDescricao();
     }
 
 }

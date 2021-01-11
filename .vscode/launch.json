@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch TesteFluxoCaixaMain",
+            "request": "launch",
+            "mainClass": "Questão3.TesteFluxoCaixaMain",
+            "projectName": "Matheus_Augusto_LISTA02_d4ca161d"
+        },
+        {
+            "type": "java",
             "name": "Launch TesteSistemaMain",
             "request": "launch",
             "mainClass": "Questão2.TesteSistemaMain",

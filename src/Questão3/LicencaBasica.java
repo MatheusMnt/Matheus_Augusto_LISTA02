@@ -26,5 +26,20 @@ public class LicencaBasica extends Receita {
     public double calcularTotal() {
         return 20.00 * this.totalContas;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        boolean receitasIguais = false;
+        if ( obj instanceof LicencaBasica){
+            LicencaBasica licencaParaComaprar = (LicencaBasica) obj;
+          if (licencaParaComaprar.calcularTotal() == this.calcularTotal()
+                && licencaParaComaprar.getData().equals(this.getData())
+                    && licencaParaComaprar.getDescricao() == this.getDescricao()){
+                        receitasIguais = true;
+                    }
+        }
+
+        return receitasIguais;
+    }
     
 }

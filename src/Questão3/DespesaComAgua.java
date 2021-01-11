@@ -29,9 +29,24 @@ public class DespesaComAgua extends Despesa {
         } else if(11.00 <= this.totalM3 && this.totalM3 <= 20.00){
             total = 45.00 + ((this.totalM3 - 10.00) * 5.00);
         } else if(this.totalM3 > 20.00){
-            total = 45.00 + ((this.totalM3 - 10.00) * 5.00) + ((this.totalM3 - 20.00) * 6.00);
+            total = 45.00 + (10.00 * 5.00) + ((this.totalM3 - 20.00) * 6.00);
         }
      return total;
     }
     
+    @Override
+    public boolean equals(Object obj) {
+        boolean despesasIguais = false;
+        if ( obj instanceof DespesaComAgua){
+            DespesaComAgua despesaParaComaprar = (DespesaComAgua) obj;
+          if (despesaParaComaprar.calcularTotal() == this.calcularTotal()
+                && despesaParaComaprar.getData().equals(this.getData())
+                    && despesaParaComaprar.getDescricao() == this.getDescricao()){
+                        despesasIguais = true;
+                    }
+        }
+
+        return despesasIguais;
+    }
+
 }

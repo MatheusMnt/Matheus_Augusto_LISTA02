@@ -29,8 +29,8 @@ public class DespesaComEnergia extends Despesa {
         total = this.kWh * 0.5;
 
         //taxa a cada 100kWh
-        if (this.kWh >= 100.00 && this.kWh % 100.00 != 0){
-            total += ((this.kWh % 100.00) * 1.20);
+        if (this.kWh >= 100.00){
+            total += (((int) (this.kWh / 100.00)) * 1.20);
         }
 
         // taxa iluminação publica
@@ -43,6 +43,21 @@ public class DespesaComEnergia extends Despesa {
         }
 
      return total;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        boolean despesasIguais = false;
+        if ( obj instanceof DespesaComEnergia){
+            DespesaComEnergia despesaParaComaprar = (DespesaComEnergia) obj;
+          if (despesaParaComaprar.calcularTotal() == this.calcularTotal()
+                && despesaParaComaprar.getData().equals(this.getData())
+                    && despesaParaComaprar.getDescricao() == this.getDescricao()){
+                        despesasIguais = true;
+                    }
+        }
+
+        return despesasIguais;
     }
     
 }
